@@ -1,0 +1,66 @@
+
+<html>
+
+<style>
+*{
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button{
+  width: 300px;
+  margin: 20px;
+  border: 1px solid grey;
+  background-color: grey;
+  padding: 10px;
+  color: snow;
+  font-size: 20px;
+  cursor: pointer;
+}
+button:hover{
+  background-color: snow;
+  color: grey;
+}
+
+.result{
+  display: block;
+  width: 300px;
+  margin: 20px;
+  border: 1px solid grey;
+  background-color: snow;
+  padding: 20px;
+  color: grey;
+  font-size: 20px;
+  clear: both;
+}
+
+#result-text{
+  padding-left: 10px;
+}
+</style>
+
+<body>
+  <button id='btnShare'>To check is navigator.share available</button>
+  <div class='result'>Result:<span id='result-text'></span></div>
+</body>
+
+<script>
+const result = document.getElementById('result-text');
+document.getElementById('btnShare').addEventListener('click', (event) => {
+  console.log('share');
+  if(navigator.share){
+    console.log(true);
+    result.innerHTML = "<span style='color: royalblue'>TRUE</span>";
+  }else{
+    console.log(false);
+    result.innerHTML = "<span style='color: red'>FALSE</span>";
+  }
+});
+</script>
+
+</html>
+
